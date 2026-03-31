@@ -1,0 +1,48 @@
+body {
+    background: #1abc9c; 
+    font-family: Tahoma, Arial, sans-serif; 
+    color: #333;
+}
+
+h1 {
+    font-family: "Times New Roman", Times, serif;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 2px solid #333;
+}
+
+table, th, td {
+    border: 1px solid #333;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+p, h4 {
+    font-size: 20px; 
+    margin-bottom: 0;
+}
+
+h4 {
+    font-size: 16px; 
+    font-weight: bold;
+}
+
+ul, ol {
+    margin: 5px 0 15px 20px;
+}
+
+img {
+    height: 30px;
+    width: auto;
+    margin: 10px 0;
+}
