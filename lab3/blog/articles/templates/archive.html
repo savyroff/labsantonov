@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Архив статей</title>
+    <meta charset="utf-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .header img {
+            height: 50px;
+        }
+        .archive {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .one-post {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .post-title {
+            color: #333;
+            margin-top: 0;
+        }
+        .article-info {
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .article-text {
+            line-height: 1.6;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM.png" alt="Python Logo" />
+        <h1>Архив статей</h1>
+    </div>
+
+    <div class="archive">
+        {% for post in posts %}
+        <div class="one-post">
+            <h2 class="post-title">{{ post.title }}</h2>
+            <div class="article-info">
+                <div class="article-author">{{ post.author.username }}</div>
+                <div class="article-created-date">{{ post.created_date }}</div>
+            </div>
+            <p class="article-text">{{ post.get_excerpt }}</p>
+        </div>
+        {% empty %}
+        <div class="one-post">
+            <p>Статей пока нет. Добавьте статьи через административную панель.</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
